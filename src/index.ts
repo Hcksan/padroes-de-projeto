@@ -3,6 +3,7 @@ import app from "./adapters/presentations/api/config/app";
 import { MongoManager } from "./dataSources/config/mongoManager";
 
 const dbConnector = MongoManager.getInstance();
+
 dbConnector
   .connect(env.mongoUrl)
   .then(() => {
@@ -11,7 +12,3 @@ dbConnector
     });
   })
   .catch(console.error);
-
-// app.listen(env.port, () => {
-//   console.log(`Server is running on port http://localhost:${env.port}`);
-// });
